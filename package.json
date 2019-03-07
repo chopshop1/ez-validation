@@ -1,8 +1,17 @@
 {
   "name": "ez-validation",
+  "author": "amad27",
   "description": "Validation made Ez",
   "version": "0.1.0",
   "private": true,
+  "keywords": ["ez", "validation", "ez-validation"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amad27/ez-validation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amad27/ez-validation/issues"
+  },
   "dependencies": {
   },
   "scripts": {},
@@ -11,5 +20,9 @@
     "jest": "^24.1.0",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.3"
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/EzValidation.js"
 }
