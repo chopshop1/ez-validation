@@ -3,7 +3,7 @@
   "author": "amad27",
   "description": "Validation made Ez",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "keywords": ["ez", "validation", "ez-validation"],
   "repository": {
     "type": "git",
