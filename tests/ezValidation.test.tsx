@@ -52,11 +52,17 @@ describe("util/ezValidationTest", () => {
   it("returns positive type WHOLENUMBER checks", () => {
     const validation = EzValidation(2).isWholeNumber().errorMessage;
     expect(validation).toEqual(undefined);
+
+    const validation1 = EzValidation("2").isWholeNumber().errorMessage;
+    expect(validation1).toEqual(undefined);
+
   });
 
   it("returns negative type WHOLENUMBER checks", () => {
     const validation = EzValidation(1.23).isWholeNumber().hasError;
     expect(validation).toEqual(true);
+    const validation1 = EzValidation("2.23").isWholeNumber().hasError;
+    expect(validation1).toEqual(true);
   });
   
   it("returns positive type BOOLEAN checks", () => {

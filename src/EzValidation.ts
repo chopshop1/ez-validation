@@ -37,7 +37,7 @@ class Validation {
   }
 
   public isWholeNumber(errorMessage: string = "Needs to be a whole number") {
-    if (typeof this.validating !== "number" || this.validating % 1 != 0) {
+    if (isNaN(Number(this.validating)) || Number(this.validating) % 1 != 0) {
       this._returnError(errorMessage);
     }
 
