@@ -16,10 +16,12 @@ Who said Validation has to be hard and annoying - Ware2Go 2019
 |isAlphanumeric|errorMessage|checks if value is Alphanumeric|
 |isEmail|errorMessage|checks if value is valid Email|
 |isPhoneNumber|errorMessage|checks if value is valid Phone Number|
+|isUSAZipCode|errorMessage|checks if value is valid USA Zip Code|
 |maxLength|maxNumber, errorMessage|checks if value exceeds max length	|
 |minLength|minNumber, errorMessage|checks if value is below min length	|
 |maxValue|maxNumber, errorMessage|checks if value exceeds max number value|
 |minValue|minNumber, errorMessage|checks if value is below min number value	|
+|customRegex| regex, errorMessage	| pass in a custom regex |
 |customValidation| cb, errorMessage	| pass in a custom call back that returns a Boolean False if there is an error True is there is not an error|
 
 

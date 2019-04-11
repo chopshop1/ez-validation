@@ -110,6 +110,9 @@ describe("util/ezValidationTest", () => {
     const validation = EzValidation('asdfj1234jlasfj2').isAlphanumeric()
       .errorMessage;
     expect(validation).toEqual(undefined);
+    const validation2 = EzValidation('').isAlphanumeric()
+      .errorMessage;
+    expect(validation2).toEqual(undefined);
   });
 
   it("returns negative type isALPHANUMERIC checks", () => {
@@ -192,6 +195,22 @@ describe("util/ezValidationTest", () => {
   it("returns negative MINLENGTH check", () => {
     const validation = EzValidation("hi").minLength(10, "length too short")
       .hasError;
+    expect(validation).toEqual(true);
+  });
+
+  it("returns postive custom regex", () => {
+    const validation = EzValidation("hi").customValidation(
+      val => val === "hi",
+      "val is not hi"
+    ).errorMessage;
+    expect(validation).toEqual(undefined);
+  });
+
+  it("returns negative custom regex", () => {
+    const validation = EzValidation("hi").customValidation(
+      val => val !== "hi",
+      "val is not hi"
+    ).hasError;
     expect(validation).toEqual(true);
   });
 
