@@ -25,7 +25,7 @@ describe("util/ezValidationTest", () => {
   });
 
   it("returns negative REQUIRED check", () => {
-    const validation = EzValidation('').required().hasError;
+    const validation = EzValidation("").required().hasError;
     expect(validation).toEqual(true);
   });
 
@@ -48,14 +48,13 @@ describe("util/ezValidationTest", () => {
     const validation = EzValidation("2342").isNumber().hasError;
     expect(validation).toEqual(true);
   });
-  
+
   it("returns positive type WHOLENUMBER checks", () => {
     const validation = EzValidation(2).isWholeNumber().errorMessage;
     expect(validation).toEqual(undefined);
 
     const validation1 = EzValidation("2").isWholeNumber().errorMessage;
     expect(validation1).toEqual(undefined);
-
   });
 
   it("returns negative type WHOLENUMBER checks", () => {
@@ -64,7 +63,7 @@ describe("util/ezValidationTest", () => {
     const validation1 = EzValidation("2.23").isWholeNumber().hasError;
     expect(validation1).toEqual(true);
   });
-  
+
   it("returns positive type BOOLEAN checks", () => {
     const validation = EzValidation(true).isBoolean().errorMessage;
     expect(validation).toEqual(undefined);
@@ -73,14 +72,14 @@ describe("util/ezValidationTest", () => {
   });
 
   it("returns negative type BOOLEAN checks", () => {
-    const validation = EzValidation('false').isBoolean().hasError;
+    const validation = EzValidation("false").isBoolean().hasError;
     expect(validation).toEqual(true);
   });
-  
+
   it("returns positive type EMPTY checks", () => {
     const validation = EzValidation(["2341"]).isEmpty().errorMessage;
     expect(validation).toEqual(undefined);
-    const validation2 = EzValidation({key: "val"}).isEmpty().errorMessage;
+    const validation2 = EzValidation({ key: "val" }).isEmpty().errorMessage;
     expect(validation2).toEqual(undefined);
     const validation3 = EzValidation("hello").isEmpty().errorMessage;
     expect(validation3).toEqual(undefined);
@@ -107,22 +106,22 @@ describe("util/ezValidationTest", () => {
   });
 
   it("returns positive type isALPHANUMERIC checks", () => {
-    const validation = EzValidation('asdfj1234jlasfj2').isAlphanumeric()
+    const validation = EzValidation("asdfj1234jlasfj2").isAlphanumeric()
       .errorMessage;
     expect(validation).toEqual(undefined);
-    const validation2 = EzValidation('').isAlphanumeric()
-      .errorMessage;
+    const validation2 = EzValidation("").isAlphanumeric().errorMessage;
     expect(validation2).toEqual(undefined);
   });
 
   it("returns negative type isALPHANUMERIC checks", () => {
-    const validation = EzValidation('ASDF-SAF-*9(*@(#H9HF(SDFH@(5H928)))').isAlphanumeric().hasError;
+    const validation = EzValidation(
+      "ASDF-SAF-*9(*@(#H9HF(SDFH@(5H928)))"
+    ).isAlphanumeric().hasError;
     expect(validation).toEqual(true);
   });
 
   it("returns positive type isEMAIL checks", () => {
-    const validation = EzValidation('fake@fake.com').isEmail()
-      .errorMessage;
+    const validation = EzValidation("fake@fake.com").isEmail().errorMessage;
     expect(validation).toEqual(undefined);
   });
 
@@ -132,10 +131,10 @@ describe("util/ezValidationTest", () => {
   });
 
   it("returns positive type isPHONENUMBER checks", () => {
-    const validation = EzValidation('770-234-2342').isPhoneNumber()
+    const validation = EzValidation("770-234-2342").isPhoneNumber()
       .errorMessage;
     expect(validation).toEqual(undefined);
-    const validation2 = EzValidation('770-2342342').isPhoneNumber()
+    const validation2 = EzValidation("770-2342342").isPhoneNumber()
       .errorMessage;
     expect(validation2).toEqual(undefined);
   });
@@ -143,8 +142,19 @@ describe("util/ezValidationTest", () => {
   it("returns negative type isPHONENUMBER checks", () => {
     const validation = EzValidation("fake").isPhoneNumber().hasError;
     expect(validation).toEqual(true);
-    const validation2 = EzValidation('7702-3-42342').isPhoneNumber()
-    .hasError;
+    const validation2 = EzValidation("7702-3-42342").isPhoneNumber().hasError;
+    expect(validation2).toEqual(true);
+  });
+
+  it("returns positive type isUSAZipCode checks", () => {
+    const validation = EzValidation("23422").isUSAZipCode().errorMessage;
+    expect(validation).toEqual(undefined);
+  });
+
+  it("returns negative type isUSAZipCod checks", () => {
+    const validation = EzValidation("234234234").isUSAZipCode().hasError;
+    expect(validation).toEqual(true);
+    const validation2 = EzValidation("asdf2").isUSAZipCode().hasError;
     expect(validation2).toEqual(true);
   });
 
@@ -199,18 +209,12 @@ describe("util/ezValidationTest", () => {
   });
 
   it("returns postive custom regex", () => {
-    const validation = EzValidation("hi").customValidation(
-      val => val === "hi",
-      "val is not hi"
-    ).errorMessage;
+    const validation = EzValidation("hi").customRegex("hi").errorMessage;
     expect(validation).toEqual(undefined);
   });
 
   it("returns negative custom regex", () => {
-    const validation = EzValidation("hi").customValidation(
-      val => val !== "hi",
-      "val is not hi"
-    ).hasError;
+    const validation = EzValidation("hi").customRegex("no").hasError;
     expect(validation).toEqual(true);
   });
 
