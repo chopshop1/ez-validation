@@ -108,7 +108,7 @@ class Validation {
   }
 
   isUSAZipCode(errorMessage: string = "Must be valid Zip Code") {
-    if (this.validating.match(/^[0-9]{5}(?:-[0-9]{4})?$/) === null) {
+    if (String(this.validating).match(/^[0-9]{5}(?:-[0-9]{4})?$/) === null) {
       this._returnError(errorMessage);
     }
 

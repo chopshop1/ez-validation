@@ -149,6 +149,8 @@ describe("util/ezValidationTest", () => {
   it("returns positive type isUSAZipCode checks", () => {
     const validation = EzValidation("23422").isUSAZipCode().errorMessage;
     expect(validation).toEqual(undefined);
+    const validation2 = EzValidation(12341).isUSAZipCode().errorMessage;
+    expect(validation2).toEqual(undefined);
   });
 
   it("returns negative type isUSAZipCod checks", () => {
@@ -156,6 +158,8 @@ describe("util/ezValidationTest", () => {
     expect(validation).toEqual(true);
     const validation2 = EzValidation("asdf2").isUSAZipCode().hasError;
     expect(validation2).toEqual(true);
+    const validation3 = EzValidation(12).isUSAZipCode().hasError;
+    expect(validation3).toEqual(true);
   });
 
   it("returns positive MAXVALUE check", () => {
