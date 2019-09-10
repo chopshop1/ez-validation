@@ -144,6 +144,8 @@ describe("util/ezValidationTest", () => {
     expect(validation).toEqual(true);
     const validation2 = EzValidation("7702-3-42342").isPhoneNumber().hasError;
     expect(validation2).toEqual(true);
+    const validation3 = EzValidation("234567890123").isPhoneNumber().hasError;
+    expect(validation3).toEqual(true);
   });
 
   it("returns positive type isUSAZipCode checks", () => {
