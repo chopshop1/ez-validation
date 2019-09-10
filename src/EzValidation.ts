@@ -98,7 +98,7 @@ class Validation {
   isPhoneNumber(errorMessage: string = "Must be valid Phone Number") {
     if (
       this.validating.match(
-        /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+        /^(1\s?)?((\([0-9]{3}\))|[0-9]{3})[\s\-]?[\0-9]{3}[\s\-]?[0-9]{4}$/gm
       ) === null
     ) {
       this._returnError(errorMessage);
