@@ -137,6 +137,8 @@ describe("util/ezValidationTest", () => {
     const validation2 = EzValidation("770-2342342").isPhoneNumber()
       .errorMessage;
     expect(validation2).toEqual(undefined);
+    const validation3 = EzValidation(5555555559).isPhoneNumber().errorMessage
+    expect(validation3).toEqual(undefined)
   });
 
   it("returns negative type isPHONENUMBER checks", () => {
