@@ -22,10 +22,10 @@ jobs:
         run: |
           npm install
           npm test
-          npm build
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          npm run-script build
       - name: npm publish
-        run: npm publish --access public
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
+          npm publish --access public
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
