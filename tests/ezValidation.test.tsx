@@ -1,6 +1,9 @@
 import { EzValidation } from "../src/EzValidation";
 
 describe("util/ezValidationTest", () => {
+  it("fails", ()=> {
+    expect(true).toEqual(false)
+  })
   it("returns if EzValidation is a class", () => {
     const validation = EzValidation("test");
     expect(typeof validation).toEqual("object");
