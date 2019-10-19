@@ -2,7 +2,7 @@
   "name": "ez-validation",
   "author": "amad27",
   "description": "Validation made Ez",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "keywords": ["ez", "validation", "ez-validation"],
   "repository": {
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "test": "jest test",
-    "build": "tsc && ls"
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/jest": "^24.0.9",
