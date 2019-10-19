@@ -15,7 +15,8 @@
   "dependencies": {
   },
   "scripts": {
-    "test": "jest test"
+    "test": "jest test",
+    "build": "tsc && ls"
   },
   "devDependencies": {
     "@types/jest": "^24.0.9",
