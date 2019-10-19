@@ -1,8 +1,6 @@
 ### Validation made Ez
 
-Who said Validation has to be hard and annoying - Ware2Go 2019
-
->I should not have to do this much work to validate something - Maddie Doetsch Ware2Go 2019
+Who said Validation has to be hard and annoying!
 
 | Function |Params| Description |
 | ------------- |-------------| -----|
@@ -41,10 +39,10 @@ ezValidation(val).isNumber("I am not a number").maxValue(100, "Too large").error
 // output = "Too large"
 
 val = "I am a large string"
-ezValidation(val).isString().maxLength(4).required()
+ezValidation(val).isString().maxLength(4).required().errorMessage
 // output = "Exceeds maximum length of  4"
 
 val = "I am a large string"
-ezValidation(val, "DEFAULT ERROR").isString().maxLength(4).required()
+ezValidation(val, "DEFAULT ERROR").isString().maxLength(4).required().errorMessage
 // output = "DEFAULT ERROR"
 ````
