@@ -14,15 +14,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: npm install, test, and build
-        run: |
-          npm install
-          npm test
-          npm run-script build
+
+      - name: npm install
+        run: npm install
+
+      - name: test
+        run: npm test
+
+      - name: build
+        run: npm run-script build
+
       - name: npm publish
         run: |
           npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
