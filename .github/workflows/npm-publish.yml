@@ -18,10 +18,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: npm install, and test
+      - name: npm install, test, and build
         run: |
           npm install
           npm test
+          npm build
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: npm publish
