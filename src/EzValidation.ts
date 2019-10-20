@@ -1,7 +1,7 @@
-class Validation {
+export class EZValidationAPI {
   hasError: boolean = false;
 
-  constructor(public validating: any, public errorMessage?: string) {}
+  constructor(public validating: any, public errorMessage?: string) { }
 
   _returnError(errorMessage: string) {
     this.hasError = true;
@@ -183,5 +183,5 @@ class Validation {
 }
 
 export const EzValidation = (val: any, defaultErrorMessage?: string) => {
-  return new Validation(val, defaultErrorMessage);
+  return new EZValidationAPI(val, defaultErrorMessage);
 };
