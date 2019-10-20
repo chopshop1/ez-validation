@@ -1,6 +1,22 @@
-import { EzValidation } from "../src/EzValidation";
+import { EzValidation, EZValidationAPI } from "../src/EzValidation";
+
+
+class CustomValidations extends EZValidationAPI {
+  customMethod() {
+    if (this.validating == 0) {
+      this._returnError("value can't be 0");
+    }
+    return this;
+  }
+}
 
 describe("util/ezValidationTest", () => {
+  it("testing custom validation", () => {
+    const validation = new CustomValidations(0).customMethod().errorMessage
+
+    expect(validation).toEqual("value can't be 0")
+  })
+
   it("returns if EzValidation is a class", () => {
     const validation = EzValidation("test");
     expect(typeof validation).toEqual("object");
@@ -228,7 +244,7 @@ describe("util/ezValidationTest", () => {
 
   it("returns postive custom validation", () => {
     const validation = EzValidation("hi").customValidation(
-      val => val === "hi",
+      (val: string) => val === "hi",
       "val is not hi"
     ).errorMessage;
     expect(validation).toEqual(undefined);
@@ -236,7 +252,7 @@ describe("util/ezValidationTest", () => {
 
   it("returns negative custom validation", () => {
     const validation = EzValidation("hi").customValidation(
-      val => val !== "hi",
+      (val: string) => val !== "hi",
       "val is not hi"
     ).hasError;
     expect(validation).toEqual(true);
