@@ -2,9 +2,9 @@
   "name": "ez-validation",
   "author": "amad27",
   "description": "Validation made Ez",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "private": false,
-  "keywords": ["ez", "validation", "ez-validation"],
+  "keywords": ["ez", "validation", "ez-validation", "javascript validation", "string validation"],
   "repository": {
     "type": "git",
     "url": "https://github.com/amad27/ez-validation.git"
