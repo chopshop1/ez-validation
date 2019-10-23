@@ -1,4 +1,4 @@
-![badge](https://action-badges.now.sh/Amad27/ez-validation)
+![badge](https://github.com/amad27/ez-validation/workflows/npm%20publish/badge.svg)
 
 # Validation made Ez
 
