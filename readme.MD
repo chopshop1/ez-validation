@@ -1,3 +1,5 @@
+![badge](https://github.com/amad27/ez-validation/workflows/npm%20publish/badge.svg)
+
 # Validation made Ez
 
 > Who said Validation has to be hard and annoying!
