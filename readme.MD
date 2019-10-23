@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/Amad27/ez-validation/workflows/npm-publish/badge.svg)](https://github.com/Amad27/ez-validation/actions)
+![badge](https://action-badges.now.sh/Amad27/ez-validation?action=npm-publish)
 
 # Validation made Ez
 
