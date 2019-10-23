@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/Amad27/ez-validation/workflows/npm-publish/badge.svg)](https://github.com/Amad27/ez-validation/actions)
+
 # Validation made Ez
 
 > Who said Validation has to be hard and annoying!
