@@ -1,4 +1,4 @@
-![badge](https://action-badges.now.sh/Amad27/ez-validation?action=npm-publish)
+![badge](https://action-badges.now.sh/Amad27/ez-validation)
 
 # Validation made Ez
 
