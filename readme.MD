@@ -1,7 +1,9 @@
+<img src="https://github.com/Amad27/ez-validation/blob/adding-logo/logo/EZ%201024.png?raw=true" width="110" align="right" alt="ez-validation logo"/>
+
 ![badge](https://github.com/amad27/ez-validation/workflows/npm%20publish/badge.svg)
-[![NPM downloads](https://img.shields.io/npm/v/ez-validation.svg)](https://www.npmjs.com/package/ez-validation)
-[![NPM downloads](https://img.shields.io/npm/dt/ez-validation.svg)](https://www.npmjs.com/package/ez-validation)
-[![NPM downloads](https://img.shields.io/bundlephobia/minzip/ez-validation)](https://img.shields.io/bundlephobia/minzip/ez-validation)
+[![NPM version](https://img.shields.io/npm/v/ez-validation.svg)](https://www.npmjs.com/package/ez-validation)
+[![NPM downloads overall](https://img.shields.io/npm/dt/ez-validation.svg)](https://www.npmjs.com/package/ez-validation)
+[![NPM package size](https://img.shields.io/bundlephobia/minzip/ez-validation)](https://img.shields.io/bundlephobia/minzip/ez-validation)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
