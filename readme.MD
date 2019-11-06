@@ -1,4 +1,4 @@
-<img src="https://github.com/Amad27/ez-validation/blob/adding-logo/logo/EZ%201024.png?raw=true" width="110" align="right"/>
+<img src="https://github.com/Amad27/ez-validation/blob/adding-logo/logo/EZ%201024.png?raw=true" width="110" align="right" alt="ez-validation logo"/>
 
 ![badge](https://github.com/amad27/ez-validation/workflows/npm%20publish/badge.svg)
 [![NPM version](https://img.shields.io/npm/v/ez-validation.svg)](https://www.npmjs.com/package/ez-validation)
