@@ -46,34 +46,95 @@
   <p>
 
 ```javascript
-import ezValidation from "util/ezValidation";
+import { EzValidation } from "ez-validation";
 
 val = "asdf";
-ezValidation(val).customValidation(
+EzValidation(val).customValidation(
   val => (val == "asdf" ? false : true),
   "Please enter valid response"
 ).errorMessage;
 // output = "Please enter valid response"
 
 val = 123;
-ezValidation(val)
+EzValidation(val)
   .isNumber("I am not a number")
   .maxValue(100, "Too large").errorMessage;
 // output = "Too large"
 
 val = "I am a large string";
-ezValidation(val)
+EzValidation(val)
   .isString()
   .maxLength(4)
   .required().errorMessage;
 // output = "Exceeds maximum length of  4"
 
 val = "I am a large string";
-ezValidation(val, "DEFAULT ERROR")
+EzValidation(val, "DEFAULT ERROR")
   .isString()
   .maxLength(4)
   .required().errorMessage;
 // output = "DEFAULT ERROR"
+```
+
+  </p>
+  </details>
+
+<hr/>
+
+  <details open><summary>Schema Based Validation</summary>
+  <p>
+  If you want to validate using a schema
+
+```javascript
+import { schemaValidation } from "ez-validations";
+
+const values = {
+  noValidation: "hi",
+  email: "fake-email",
+  name: "im a cow"
+};
+
+const schema = {
+  email: (val: string) =>
+    EzValidation(val)
+      .isEmail()
+      .required().errorMessage,
+  name: (val: string) => EzValidation(val).maxLength(2).errorMessage
+};
+schemaValidation(values, validationSchema);
+/* output: {
+  email: "not a valid email",
+  name: "name length too long"
+}
+*/
+```
+
+```javascript
+import { schemaValidation } from "ez-validations";
+
+const values = {
+  noValidation: "hi",
+  email: "fake-email",
+  name: "im a cow"
+};
+
+const schema = {
+  email: {
+    validate: (val: string) =>
+      EzValidation(val)
+        .isEmail()
+        .required().errorMessage
+  },
+  name: {
+    validate: (val: string) => EzValidation(val).maxLength(2).errorMessage
+  }
+};
+schemaValidation(values, schema, "validate");
+/* output: {
+  email: "not a valid email",
+  name: "name length too long"
+}
+*/
 ```
 
   </p>
@@ -100,5 +161,5 @@ new CustomEZValidation(0).customMethod().errorMessage;
 // "value can't be 0"
 ```
 
-  </p>
+</p>
   </details>

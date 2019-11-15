@@ -1,6 +1,5 @@
 import { EzValidation, EZValidationAPI } from "../src/EzValidation";
 
-
 class CustomValidations extends EZValidationAPI {
   customMethod() {
     if (this.validating == 0) {
