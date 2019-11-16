@@ -173,9 +173,13 @@ export class EZValidationAPI {
     return this;
   }
 
-  customValidation(cb: (validating: any) => boolean, errorMessage: string) {
-    if (!cb(this.validating)) {
+  customValidation(cb: (validating: any) => boolean | string, errorMessage?: string) {
+    const cbOutput = cb(this.validating)
+
+    if (!cbOutput && errorMessage) {
       this._returnError(errorMessage);
+    } else if (typeof (cbOutput) === "string") {
+      this._returnError(cbOutput)
     }
 
     return this;

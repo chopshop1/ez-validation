@@ -231,7 +231,7 @@ describe("util/ezValidationTest", () => {
     expect(validation).toEqual(true);
   });
 
-  it("returns postive custom regex", () => {
+  it("returns positive custom regex", () => {
     const validation = EzValidation("hi").customRegex("hi").errorMessage;
     expect(validation).toEqual(undefined);
   });
@@ -241,7 +241,7 @@ describe("util/ezValidationTest", () => {
     expect(validation).toEqual(true);
   });
 
-  it("returns postive custom validation", () => {
+  it("returns positive custom validation", () => {
     const validation = EzValidation("hi").customValidation(
       (val: string) => val === "hi",
       "val is not hi"
@@ -255,5 +255,14 @@ describe("util/ezValidationTest", () => {
       "val is not hi"
     ).hasError;
     expect(validation).toEqual(true);
+  });
+
+  it("user can return string in customValidation, and string displays", () => {
+    const errMsg = "this is an error";
+    const validation = EzValidation("hi").customValidation(
+      (val: string) => val === "hi" ? errMsg : false
+    ).errorMessage;
+    
+    expect(validation).toEqual(errMsg);
   });
 });

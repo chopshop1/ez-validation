@@ -147,7 +147,7 @@ schemaValidation(values, schema, "validate");
   If you have a validation method that isn't provided thats used often you can extend the ValidationAPI class to add your own methods!
 
 ```javascript
-import { EZValidationAPI } from "../src/EzValidation";
+import { EZValidationAPI } from "ez-validation";
 
 class CustomEzValidation extends EZValidationAPI {
   customMethod() {
