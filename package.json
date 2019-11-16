@@ -2,7 +2,7 @@
   "name": "ez-validation",
   "author": "amad27",
   "description": "Validation made Ez",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "keywords": ["ez", "validation", "ez-validation", "javascript validation", "string validation", "form validation", "schema validation"],
   "repository": {
