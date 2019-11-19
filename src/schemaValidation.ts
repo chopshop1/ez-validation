@@ -1,5 +1,4 @@
-type Map = { [key: string]: any }
-
+import { Map } from "./types"
 export const schemaValidation = (values: Map, schema: Map, schemaValidationKey: string | null = null) => {
   let tempSchema = schema
 

@@ -12,6 +12,8 @@
 
 > Who said Validation has to be hard and annoying!
 
+https://medium.com/@27amad27/validation-made-ez-50e72d6a0b29
+
 <hr/>
 
   <details open><summary>API</summary>

@@ -1,14 +1,14 @@
 import { EzValidation, schemaValidation } from '../src';
 
 const values = {
-  noValidation: "hi",
-  email: "fake-email",
+  noValidation: "",
+  email: "",
   name: "im a cow",
 }
 
 const validationSchema = {
-  email: (val: string) => EzValidation(val).isEmail().required().errorMessage,
-  name: (val: string) => EzValidation(val).maxLength(2).errorMessage
+  email: (val: string) => EzValidation(val).isEmail().required(),
+  name: (val: string) => EzValidation(val).maxLength(2)
 }
 
 const nestedValidationSchema = {
