@@ -1,11 +1,13 @@
+import { Map } from "./types"
 export class EZValidationAPI {
   hasError: boolean = false;
 
-  constructor(public validating: any, public errorMessage?: string) { }
+  constructor(public validating: any, public errorMessage?: string, public errorMessages: string[] = []) { }
 
   _returnError(errorMessage: string) {
     this.hasError = true;
     this.errorMessage = this.errorMessage || errorMessage;
+    this.errorMessages.push(errorMessage)
   }
 
   required(errorMessage: string = "This is required") {

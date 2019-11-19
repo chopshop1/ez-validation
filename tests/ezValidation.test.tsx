@@ -10,6 +10,12 @@ class CustomValidations extends EZValidationAPI {
 }
 
 describe("util/ezValidationTest", () => {
+  it("returns error messages if there are multiple errors", () => {
+    const validation = EzValidation('3').isNumber().isString().isBoolean().isEmail().required().errorMessages
+
+    expect(validation.length).toEqual(3)
+  })
+
   it("testing custom validation", () => {
     const validation = new CustomValidations(0).customMethod().errorMessage
 
@@ -262,7 +268,7 @@ describe("util/ezValidationTest", () => {
     const validation = EzValidation("hi").customValidation(
       (val: string) => val === "hi" ? errMsg : false
     ).errorMessage;
-    
+
     expect(validation).toEqual(errMsg);
   });
 });
