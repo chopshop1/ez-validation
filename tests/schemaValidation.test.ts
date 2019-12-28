@@ -23,7 +23,7 @@ const nestedValidationSchema = {
 describe("util/schemaValidation", () => {
   it("validates values in schema and returns array of errors", () => {
     const validation = schemaValidation(values, validationSchema)
-
+    console.log(validation)
     expect(Object.keys(validation).length).toBe(2)
   })
 
