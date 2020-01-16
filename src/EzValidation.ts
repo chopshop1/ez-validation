@@ -1,4 +1,3 @@
-import { Map } from "./types"
 export class EZValidationAPI {
   hasError: boolean = false;
 
